@@ -18,7 +18,7 @@
             <header>
                 <!-- 로고 -->
                 <div id="logo">
-                    <h1><a href="/index.html">가온누리</a></h1>
+                    <h1><a href="/index.jsp">가온누리</a></h1>
                 </div>
                 <!-- 메인 네비게이션 -->
                 <nav id = "main-nav">
@@ -26,11 +26,11 @@
                         <li class="main-nav">
                             행사 소개
                             <ul id="description-menu">
-                                <a href="/gbg.html"><li>경복궁</li></a>
-                                <a href="/dsg.html"><li>덕수궁</li></a>
-                                <a href="/cgg.html"><li>창경궁</li></a>
-                                <a href="/cdg.html"><li>창덕궁</li></a>
-                                <a href="/jm.html"><li>종묘</li></a>
+                                <a href="/gbg.jsp"><li>경복궁</li></a>
+                                <a href="/dsg.jsp"><li>덕수궁</li></a>
+                                <a href="/cgg.jsp"><li>창경궁</li></a>
+                                <a href="/cdg.jsp"><li>창덕궁</li></a>
+                                <a href="/jm.jsp"><li>종묘</li></a>
                             </ul>
                         </li>
                         <li class="main-nav"><a href="/event/reservation.html">행사 예매</a></li>

@@ -18,7 +18,7 @@
             <header>
                 <!-- 로고 -->
                 <div id="logo">
-                    <h1><a href="/index.html">가온누리</a></h1>
+                    <h1><a href="/index.jsp">가온누리</a></h1>
                 </div>
                 <!-- 메인 네비게이션 -->
                 <nav id = "main-nav">
@@ -26,11 +26,11 @@
                         <li class="main-nav">
                             행사 소개
                             <ul id="description-menu">
-                                <a href="/event/description/gbg.html"><li>경복궁</li></a>
-                                <a href="/event/description/dsg.html"><li>덕수궁</li></a>
-                                <a href="/event/description/cgg.html"><li>창경궁</li></a>
-                                <a href="/event/description/cdg.html"><li>창덕궁</li></a>
-                                <a href="/event/description/jm.html"><li>종묘</li></a>
+                                <a href="/event/description/gbg.jsp"><li>경복궁</li></a>
+                                <a href="/event/description/dsg.jsp"><li>덕수궁</li></a>
+                                <a href="/event/description/cgg.jsp"><li>창경궁</li></a>
+                                <a href="/event/description/cdg.jsp"><li>창덕궁</li></a>
+                                <a href="/event/description/jm.jsp"><li>종묘</li></a>
                             </ul>
                         </li>
                         <li class="main-nav"><a href="/event/reservation.html">행사 예매</a></li>
@@ -70,7 +70,7 @@
                     </section>
                     <section id="login">
                         <div id="login-input">
-                            <form action="index.html" method="get">
+                            <form action="/user/login.do" method="post">
                                 <input type="text" name="user-id" id="user-id" placeholder="아이디를 입력해 주세요." required> 
                                 <br>
                                 <input type="password" name="user-pw" id="user-pw" placeholder="비밀번호를 입력해 주세요." required>
@@ -79,7 +79,7 @@
                                 <br>
                                 <div>
                                     <label><input type="checkbox" name="stay-signed-in" id="stay-signed-in"> 로그인 상태 유지</label>
-                                    <p><a href="/./find-id.html">아이디 찾기</a> / <a href="/./find-pw.html">비밀번호 찾기</a></p>
+                                    <p><a href="/find-id.html">아이디 찾기</a> / <a href="/find-pw.html">비밀번호 찾기</a></p>
                                 </div>
                             </form>
                         </div>

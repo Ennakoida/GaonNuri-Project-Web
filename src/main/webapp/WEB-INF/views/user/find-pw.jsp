@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!-- 아이디 찾기 -->
+<!-- 비밀번호 찾기 -->
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -10,15 +10,15 @@
         <link rel="stylesheet" href="/resources/css/reset.css">
         <link rel="stylesheet" href="/resources/css/common.css">
         <link rel="stylesheet" href="/resources/css/font.css">
-        <link rel="stylesheet" href="/resources/css/user/find-id.css">
-        <title>아이디 찾기</title>
+        <link rel="stylesheet" href="/resources/css/user/find-pw.css">
+        <title>비밀번호 찾기</title>
     </head>
     <body>
         <div id="container">
             <header>
                 <!-- 로고 -->
                 <div id="logo">
-                    <h1><a href="/index.html">가온누리</a></h1>
+                    <h1><a href="/index.jsp">가온누리</a></h1>
                 </div>
                 <!-- 메인 네비게이션 -->
                 <nav id = "main-nav">
@@ -26,11 +26,11 @@
                         <li class="main-nav">
                             행사 소개
                             <ul id="description-menu">
-                                <a href="/event/description/gbg.html"><li>경복궁</li></a>
-                                <a href="/event/description/dsg.html"><li>덕수궁</li></a>
-                                <a href="/event/description/cgg.html"><li>창경궁</li></a>
-                                <a href="/event/description/cdg.html"><li>창덕궁</li></a>
-                                <a href="/event/description/jm.html"><li>종묘</li></a>
+                                <a href="/event/description/gbg.jsp"><li>경복궁</li></a>
+                                <a href="/event/description/dsg.jsp"><li>덕수궁</li></a>
+                                <a href="/event/description/cgg.jsp"><li>창경궁</li></a>
+                                <a href="/event/description/cdg.jsp"><li>창덕궁</li></a>
+                                <a href="/event/description/jm.jsp"><li>종묘</li></a>
                             </ul>
                         </li>
                         <li class="main-nav"><a href="/event/reservation.html">행사 예매</a></li>
@@ -62,18 +62,22 @@
                 </nav>
             </header>
             <main>
-                <section id="find-id-title">
-                    <h1>아이디 찾기</h1>
+                <section id="find-pw-title">
+                    <h1>비밀번호 찾기</h1>
                     <div id="colorBox"></div>
                 </section>
-                <section id="find-id">
+                <section id="find-pw">
                     <div>
-                        <img src="/resources/img/user/find-icon/user.png" alt="아이디 찾기">
+                        <img src="/resources/img/user/find-icon/pw.png" alt="비밀번호 찾기">
                     </div>
-                    <form action="./login.html" method="get">
+                    <form action="/login.html" method="post">
+                        <input type="text" name="user-id" id="user-id" placeholder="아이디를 입력해 주세요." required>
+                        <br>
                         <input type="tel" name="user-phone" id="user-phone" placeholder="전화번호를 하이픈(-) 빼고 입력해 주세요." required>
                         <br>
-                        <input type="submit" value="아이디 찾기" id="find-id-btn">
+                        <label for="new-pw"><input type="checkbox" name="new-pw" id="new-pw" required><div>기입한 전화번호로 새로운 비밀번호를 수신하는 것에 <br>동의합니다.</div></label>
+                        <br>
+                        <input type="submit" value="비밀번호 찾기" id="find-pw-btn">
                     </form>
                 </section>
             </main>
@@ -92,7 +96,7 @@
                 <a href="javascript:window.scrollTo(0,document.body.scrollHeight);"><img src='/resources/img/bottom.png' alt='bottom' style="width: 35px;"/></a>
             </aside>
         </div>
-
+        
         <script>
             document.querySelectorAll("input").forEach(input => {
                 input.addEventListener("invalid", () => {

@@ -20,7 +20,7 @@
             <header>
                 <!-- 로고 -->
                 <div id="logo">
-                    <h1><a href="/index.html">가온누리</a></h1>
+                    <h1><a href="/index.jsp">가온누리</a></h1>
                 </div>
                 <!-- 메인 네비게이션 -->
                 <nav id = "main-nav">
@@ -28,15 +28,15 @@
                         <li class="main-nav">
                             행사 소개
                             <ul id="description-menu">
-                                <a href="/event/description/gbg.html"><li>경복궁</li></a>
-                                <a href="/event/description/dsg.html"><li>덕수궁</li></a>
-                                <a href="/event/description/cgg.html"><li>창경궁</li></a>
-                                <a href="/event/description/cdg.html"><li>창덕궁</li></a>
-                                <a href="/event/description/jm.html"><li>종묘</li></a>
+                                <a href="/event/description/gbg.jsp"><li>경복궁</li></a>
+                                <a href="/event/description/dsg.jsp"><li>덕수궁</li></a>
+                                <a href="/event/description/cgg.jsp"><li>창경궁</li></a>
+                                <a href="/event/description/cdg.jsp"><li>창덕궁</li></a>
+                                <a href="/event/description/jm.jsp"><li>종묘</li></a>
                             </ul>
                         </li>
-                        <li class="main-nav"><a href="/event/reservation.html">행사 예매</a></li>
-                        <li class="main-nav"><a href="/hanbok/rentals.html">한복 대여</a></li>
+                        <li class="main-nav"><a href="/event/reservation.do">행사 예매</a></li>
+                        <li class="main-nav"><a href="/hanbok/rental.do">한복 대여</a></li>
                         <li class="main-nav"><a href="#">셔틀 버스</a></li>
                         <li class="main-nav">열린 마당
                             <ul id="community-menu">
@@ -52,7 +52,7 @@
                 <nav id="sub-nav">
                     <ul>
                         <li class="sub-nav"><a href="/user/login.html">로그인</a></li>
-                        <li class="sub-nav"><a href="/user/sign-up.html">회원가입</a></li>
+                        <li class="sub-nav"><a href="/user/enroll.do">회원가입</a></li>
                         <li class="sub-nav">한국어 ▾
                             <ul id="LNG-menu">
                                 <li>한국어</li>
@@ -87,30 +87,30 @@
                     <div id="main-description-div">
                         <div class="palace">
                             <!-- 이미지 -->
-                            <a href="/event/description/gbg.html" ><img class="palace-img" src="/resources/img/index/description/경복궁.jpg" alt="경복궁"></a>
+                            <a href="/event/description/gbg.jsp" ><img class="palace-img" src="/resources/img/index/description/경복궁.jpg" alt="경복궁"></a>
                             <!-- 이름 -->
                             <h4>경복궁</h4>
                             <!-- 설명 -->
                             <p>경복궁은 태조 4년에 창건된 조선의 법궁으로 대한민국을 대표하는 문화유산입니다.</p>
                         </div>
                         <div class="palace">
-                            <a href="/event/description/dsg.html"><img class="palace-img" src="/resources/img/index/description/덕수궁.jpg" alt="덕수궁"></a>
+                            <a href="/event/description/dsg.jsp"><img class="palace-img" src="/resources/img/index/description/덕수궁.jpg" alt="덕수궁"></a>
                             <h4>덕수궁</h4>
                             <p>덕수궁은 1897년에 선포된 대한제국의 황궁으로 옛 이름은 경운궁입니다.
                             </p>
                         </div>
                         <div class="palace">
-                            <a href="/event/description/cgg.html"><img class="palace-img" src="/resources/img/index/description/창경궁.jpg" alt="창경궁"></a>
+                            <a href="/event/description/cgg.jsp"><img class="palace-img" src="/resources/img/index/description/창경궁.jpg" alt="창경궁"></a>
                             <h4>창경궁</h4>
                             <p>창경궁은 성종 14년에 정희왕후, 안순왕후, 소혜왕후 세분의 대비를 모시기 위해 옛 수강궁터에 창건한 궁입니다.</p>
                         </div>
                         <div class="palace">
-                            <a href="/event/description/cdg.html"><img class="palace-img" src="/resources/img/index/description/창덕궁.jpg" alt="창덕궁"></a>
+                            <a href="/event/description/cdg.jsp"><img class="palace-img" src="/resources/img/index/description/창덕궁.jpg" alt="창덕궁"></a>
                             <h4>창덕궁</h4>
                             <p>창덕궁은 북악산 왼쪽 봉우리인 응봉자락에 자리 잡고 있는 조선의 궁궐입니다.</p>
                         </div>
                         <div class="palace">
-                            <a href="/event/description/jm.html"><img class="palace-img" src="/resources/img/index/description/종묘.png" alt="종묘"></a>
+                            <a href="/event/description/jm.jsp"><img class="palace-img" src="/resources/img/index/description/종묘.png" alt="종묘"></a>
                             <h4>종묘</h4>
                             <p>종묘는 조선왕조 역대 왕과 왕후 및 추존된 왕과 왕후의 신주를 모신 사당으로서 가장 정제되고 장엄한 건축물 중의 하나입니다.</p>
                         </div>

@@ -44,7 +44,7 @@ main {
         padding-bottom: 100px;
     }
 
-        label:not(label[for=event-info]){
+        label:not(label[for=user-event-yn]){
             display: inline-block;
             width: 295px;
             text-align: left;
@@ -69,7 +69,7 @@ main {
                 color: #666666;
             }
 
-                #event-info {
+                #user-event-yn {
                     /* 체크박스 색상 변경 */
                     accent-color: #002B5B;           
                     position: relative;         
