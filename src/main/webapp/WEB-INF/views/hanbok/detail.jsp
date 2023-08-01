@@ -26,19 +26,19 @@
                         <li class="main-nav">
                             행사 소개
                             <ul id="description-menu">
-                                <a href="/event/description/gbg.jsp"><li>경복궁</li></a>
-                                <a href="/event/description/dsg.jsp"><li>덕수궁</li></a>
-                                <a href="/event/description/cgg.jsp"><li>창경궁</li></a>
-                                <a href="/event/description/cdg.jsp"><li>창덕궁</li></a>
-                                <a href="/event/description/jm.jsp"><li>종묘</li></a>
+                                <a href="/event/gbgDescription.do"><li>경복궁</li></a>
+                                <a href="/event/dsgDescription.do"><li>덕수궁</li></a>
+                                <a href="/event/cggDescription.do"><li>창경궁</li></a>
+                                <a href="/event/cdgDescription.do"><li>창덕궁</li></a>
+                                <a href="/event/jmDescription.do"><li>종묘</li></a>
                             </ul>
                         </li>
-                        <li class="main-nav"><a href="/event/reservation.html">행사 예매</a></li>
-                        <li class="main-nav"><a href="/hanbok/rentals.html">한복 대여</a></li>
+                        <li class="main-nav"><a href="/event/reservation.do">행사 예매</a></li>
+                        <li class="main-nav"><a href="/hanbok/rental.do">한복 대여</a></li>
                         <li class="main-nav"><a href="#">셔틀 버스</a></li>
                         <li class="main-nav">열린 마당
                             <ul id="community-menu">
-                                <a href="/notice/notice.html"><li>공지사항</li></a>
+                                <a href="/notice/notice.do"><li>공지사항</li></a>
                                 <a href="#"><li>Q&A</li></a>
                                 <a href="#"><li>마이페이지</li></a>
                             </ul>
@@ -49,8 +49,8 @@
                 <!-- 로그인, 회원가입, 한국어 네비게이션 -->
                 <nav id="sub-nav">
                     <ul>
-                        <li class="sub-nav"><a href="/user/login.html">로그인</a></li>
-                        <li class="sub-nav"><a href="/user/sign-up.html">회원가입</a></li>
+                        <li class="sub-nav"><a href="/user/login.do">로그인</a></li>
+                        <li class="sub-nav"><a href="/user/enroll.do">회원가입</a></li>
                         <li class="sub-nav">한국어 ▾
                             <ul id="LNG-menu">
                                 <li>한국어</li>
@@ -72,7 +72,7 @@
                     <img src="/resources/img/hanbok/rentals/hanbok1.jpg" alt="여름 한복 세트">
                     <!-- 옵션 선택 -->
                     <div id="select-option">
-                        <form action="./rentals.html" method="get">
+                        <form action="/hanbok/detail.do" method="get">
                             <label for="top-color">상의 색상</label><br>
                             <select name="top-color" id="top-color" required>
                                 <option value="" disabled selected hidden>옵션 선택</option>

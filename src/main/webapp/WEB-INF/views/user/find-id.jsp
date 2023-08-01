@@ -26,19 +26,19 @@
                         <li class="main-nav">
                             행사 소개
                             <ul id="description-menu">
-                                <a href="/event/description/gbg.jsp"><li>경복궁</li></a>
-                                <a href="/event/description/dsg.jsp"><li>덕수궁</li></a>
-                                <a href="/event/description/cgg.jsp"><li>창경궁</li></a>
-                                <a href="/event/description/cdg.jsp"><li>창덕궁</li></a>
-                                <a href="/event/description/jm.jsp"><li>종묘</li></a>
+                                <a href="/event/gbgDescription.do"><li>경복궁</li></a>
+                                <a href="/event/dsgDescription.do"><li>덕수궁</li></a>
+                                <a href="/event/cggDescription.do"><li>창경궁</li></a>
+                                <a href="/event/cdgDescription.do"><li>창덕궁</li></a>
+                                <a href="/event/jmDescription.do"><li>종묘</li></a>
                             </ul>
                         </li>
-                        <li class="main-nav"><a href="/event/reservation.html">행사 예매</a></li>
-                        <li class="main-nav"><a href="/hanbok/rentals.html">한복 대여</a></li>
+                        <li class="main-nav"><a href="/event/reservation.do">행사 예매</a></li>
+                        <li class="main-nav"><a href="/hanbok/rental.do">한복 대여</a></li>
                         <li class="main-nav"><a href="#">셔틀 버스</a></li>
                         <li class="main-nav">열린 마당
                             <ul id="community-menu">
-                                <a href="/notice/notice.html"><li>공지사항</li></a>
+                                <a href="/notice/notice.do"><li>공지사항</li></a>
                                 <a href="#"><li>Q&A</li></a>
                                 <a href="#"><li>마이페이지</li></a>
                             </ul>
@@ -49,8 +49,8 @@
                 <!-- 로그인, 회원가입, 한국어 네비게이션 -->
                 <nav id="sub-nav">
                     <ul>
-                        <li class="sub-nav"><a href="/user/login.html">로그인</a></li>
-                        <li class="sub-nav"><a href="/user/sign-up.html">회원가입</a></li>
+                        <li class="sub-nav"><a href="/user/login.do">로그인</a></li>
+                        <li class="sub-nav"><a href="/user/enroll.do">회원가입</a></li>
                         <li class="sub-nav">한국어 ▾
                             <ul id="LNG-menu">
                                 <li>한국어</li>
@@ -70,7 +70,7 @@
                     <div>
                         <img src="/resources/img/user/find-icon/user.png" alt="아이디 찾기">
                     </div>
-                    <form action="/login.html" method="get">
+                    <form action="/user/login.do" method="get">
                         <input type="tel" name="user-phone" id="user-phone" placeholder="전화번호를 하이픈(-) 빼고 입력해 주세요." required>
                         <br>
                         <input type="submit" value="아이디 찾기" id="find-id-btn">

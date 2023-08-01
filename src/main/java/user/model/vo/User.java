@@ -3,7 +3,6 @@ package user.model.vo;
 public class User {
 	private String userId;
 	private String userPw;
-	private String userPwCheck;
 	private String userName;
 	private String userPhone;
 	private String userEmail;
@@ -17,12 +16,11 @@ public class User {
 		this.userPw = userPw;
 	}
 
-	public User(String userId, String userPw, String userPwCheck, String userName, String userPhone, String userEmail,
+	public User(String userId, String userPw, String userName, String userPhone, String userEmail,
 			String userEventYn) {
 		super();
 		this.userId = userId;
 		this.userPw = userPw;
-		this.userPwCheck = userPwCheck;
 		this.userName = userName;
 		this.userPhone = userPhone;
 		this.userEmail = userEmail;
@@ -40,12 +38,6 @@ public class User {
 	}
 	public void setuserPw(String userPw) {
 		this.userPw = userPw;
-	}
-	public String getuserPwCheck() {
-		return userPwCheck;
-	}
-	public void setuserPwCheck(String userPwCheck) {
-		this.userPwCheck = userPwCheck;
 	}
 	public String getuserName() {
 		return userName;
@@ -74,8 +66,8 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "회원 [아이디=" + userId + ", 비밀번호=" + userPw + ", 비밀번호확인=" + userPwCheck
-				+ ", 이름=" + userName + ", 전화번호=" + userPhone + ", 이메일=" + userEmail
+		return "회원 [아이디=" + userId + ", 비밀번호=" + userPw + ", 이름=" + userName 
+				+ ", 전화번호=" + userPhone + ", 이메일=" + userEmail
 				+ ", 광고수신여부=" + userEventYn + "]";
 	}
 }

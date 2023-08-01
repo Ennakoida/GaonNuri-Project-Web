@@ -31,7 +31,7 @@ public class EnrollController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/user/sign-up.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/user/enroll.jsp");
 		view.forward(request, response);
 	}
 
@@ -44,13 +44,12 @@ public class EnrollController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String userId = request.getParameter("user-id");
 		String userPw = request.getParameter("user-pw");
-		String userPwCheck = request.getParameter("user-pw-check");
 		String userName = request.getParameter("user-name");
 		String userPhone = request.getParameter("user-phone");
 		String userEmail = request.getParameter("user-email");
 		String userEventYn = request.getParameter("user-event-yn");
-		
-		User user = new User(userId, userPw, userPwCheck, userName, userPhone, userEmail, userEventYn);
+		userEventYn = userEventYn != null ? "Y" : "N";
+		User user = new User(userId, userPw, userName, userPhone, userEmail, userEventYn);
 		
 		// insert
 		int result = service.insertUser(user);
@@ -58,13 +57,13 @@ public class EnrollController extends HttpServlet {
 		if(result > 0) {
 			// 성공
 			request.setAttribute("msg", "회원가입");
-			request.setAttribute("url", "/login.jsp");
-			request.getRequestDispatcher("/user/serviceSuccess.jsp").forward(request, response);
+			request.setAttribute("url", "/user/login.do");
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp").forward(request, response);
 		} else {
 			// 실패
 			request.setAttribute("msg", "회원가입");
-			request.setAttribute("url", "sign-up.jsp");
-			request.getRequestDispatcher("/user/serviceFailed.jsp").forward(request, response);
+			request.setAttribute("url", "/user/enroll.do");
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
 		}
 	}
 

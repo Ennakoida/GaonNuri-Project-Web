@@ -1,29 +1,24 @@
-package notice.controller;
+package user.controller;
 
 import java.io.IOException;
-import java.util.List;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import notice.model.service.NoticeService;
-import notice.model.vo.Notice;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class NoticeController
+ * Servlet implementation class LogoutController
  */
-@WebServlet("/notice/notice.do")
-public class NoticeController extends HttpServlet {
+@WebServlet("/user/logout.do")
+public class LogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public NoticeController() {
+    public LogoutController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,11 +27,11 @@ public class NoticeController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		NoticeService service = new NoticeService();
-		List<Notice> nList = service.selectNoticeList();
-		request.setAttribute("nList", nList);
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/notice/notice.jsp");
-		view.forward(request, response);
+		HttpSession session = request.getSession();
+		if(session != null) {
+			session.invalidate(); // 로그아웃 : 세션파괴 -> 세션 저장 정보 사라짐
+			response.sendRedirect("/index.jsp"); // = 자바(서버)에서의 location.href
+		}
 	}
 
 	/**

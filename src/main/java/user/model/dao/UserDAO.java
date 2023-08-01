@@ -10,7 +10,7 @@ import user.model.vo.User;
 public class UserDAO {
 
 	public int insertUser(Connection conn, User user) {
-		String query = "INSERT INTO USER_TBL VALUES(?, ?, ?, ?, ?, ?, ?)";
+		String query = "INSERT INTO USER_TBL VALUES(?, ?, ?, ?, ?, ?)";
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
@@ -18,11 +18,10 @@ public class UserDAO {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, user.getuserId());
 			pstmt.setString(2, user.getuserPw());
-			pstmt.setString(3, user.getuserPwCheck());
-			pstmt.setString(4, user.getuserName());
-			pstmt.setString(5, user.getuserPhone());
-			pstmt.setString(6, user.getuserEmail());
-			pstmt.setString(7, user.getuserEventYn());
+			pstmt.setString(3, user.getuserName());
+			pstmt.setString(4, user.getuserPhone());
+			pstmt.setString(5, user.getuserEmail());
+			pstmt.setString(6, user.getuserEventYn());
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -69,11 +68,10 @@ public class UserDAO {
 		User user = new User();
 		user.setuserId(rset.getString(1));
 		user.setuserPw(rset.getString(2));
-		user.setuserPwCheck(rset.getString(3));
-		user.setuserName(rset.getString(4));
-		user.setuserPhone(rset.getString(5));
-		user.setuserEmail(rset.getString(6));
-		user.setuserEventYn(rset.getString(7));
+		user.setuserName(rset.getString(3));
+		user.setuserPhone(rset.getString(4));
+		user.setuserEmail(rset.getString(5));
+		user.setuserEventYn(rset.getString(6));
 		return user;
 	}
 

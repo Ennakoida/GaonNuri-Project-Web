@@ -124,7 +124,7 @@ main {
         }
 
             table tr:first-child>td:first-child {
-                background-image: url("img/index/service/한복댕기.jpg");
+                background-image: url("/img/index/service/한복댕기.jpg");
                 background-size: cover;
             }
 
@@ -135,18 +135,18 @@ main {
 
             table tr:first-child>td:nth-child(3) {
                 width: 400px;
-                background-image: url("img/index/service/한복단체.jpg");
+                background-image: url("/img/index/service/한복단체.jpg");
                 background-size: cover;
             }
 
             table tr:first-child>td:nth-child(4) {
                 width: 400px;
-                background-image: url("img/index/service/시티투어버스.png");
+                background-image: url("/img/index/service/시티투어버스.png");
                 background-size: cover;
             }
 
             table tr:last-child>td:nth-child(2) {
-                background-image: url("img/index/service/한복.png");
+                background-image: url("/img/index/service/한복.png");
                 background-size: cover;
             }        
 

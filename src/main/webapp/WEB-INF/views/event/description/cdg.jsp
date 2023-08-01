@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!-- 덕수궁 행사 소개 페이지 -->
+<!-- 창덕궁 행사 소개 페이지 -->
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="/resources/css/common.css">
         <link rel="stylesheet" href="/resources/css/font.css">
         <link rel="stylesheet" href="/resources/css/event/description.css">
-        <title>덕수궁 행사 소개</title>
+        <title>창덕궁 행사 소개</title>
     </head>
     <body>
         <div id="container">
@@ -26,19 +26,19 @@
                         <li class="main-nav">
                             행사 소개
                             <ul id="description-menu">
-                                <a href="/gbg.jsp"><li>경복궁</li></a>
-                                <a href="/dsg.jsp"><li>덕수궁</li></a>
-                                <a href="/cgg.jsp"><li>창경궁</li></a>
-                                <a href="/cdg.jsp"><li>창덕궁</li></a>
-                                <a href="/jm.jsp"><li>종묘</li></a>
+                                <a href="/event/gbgDescription.do"><li>경복궁</li></a>
+                                <a href="/event/dsgDescription.do"><li>덕수궁</li></a>
+                                <a href="/event/cggDescription.do"><li>창경궁</li></a>
+                                <a href="/event/cdgDescription.do"><li>창덕궁</li></a>
+                                <a href="/event/jmDescription.do"><li>종묘</li></a>
                             </ul>
                         </li>
-                        <li class="main-nav"><a href="/event/reservation.html">행사 예매</a></li>
-                        <li class="main-nav"><a href="/hanbok/rentals.html">한복 대여</a></li>
+                        <li class="main-nav"><a href="/event/reservation.do">행사 예매</a></li>
+                        <li class="main-nav"><a href="/hanbok/rental.do">한복 대여</a></li>
                         <li class="main-nav"><a href="#">셔틀 버스</a></li>
                         <li class="main-nav">열린 마당
                             <ul id="community-menu">
-                                <a href="/notice/notice.html"><li>공지사항</li></a>
+                                <a href="/notice/notice.do"><li>공지사항</li></a>
                                 <a href="#"><li>Q&A</li></a>
                                 <a href="#"><li>마이페이지</li></a>
                             </ul>
@@ -49,8 +49,8 @@
                 <!-- 로그인, 회원가입, 한국어 네비게이션 -->
                 <nav id="sub-nav">
                     <ul>
-                        <li class="sub-nav"><a href="/user/login.html">로그인</a></li>
-                        <li class="sub-nav"><a href="/user/sign-up.html">회원가입</a></li>
+                        <li class="sub-nav"><a href="/user/login.do">로그인</a></li>
+                        <li class="sub-nav"><a href="/user/enroll.do">회원가입</a></li>
                         <li class="sub-nav">한국어 ▾
                             <ul id="LNG-menu">
                                 <li>한국어</li>
@@ -63,44 +63,56 @@
             </header>
             <main>
                 <section id="description-title">
-                    <h1>덕수궁</h1>
+                    <h1>창덕궁</h1>
                     <div id="colorBox"></div>
                 </section>
                 <section id="short-description">
                     <div id="red-line"></div>
-                    <h2>밤의 석조전</h2>
-                    <br>
-                    <h3 style="font-family: 'Chosunilbo_myungjo', sans-serif, serif; color:#b5b5b5;">오얏꽃 흩날리는 봄밤, 대한제국 황실의 문이 열립니다.</h3>
-                    <br><br><br>
+                    <h2>달빛기행</h2>
+                    <br><br><br><br>
                     <p>
-                        황제의 궁궐, 덕수궁에서 전문 해설사와 함께 대한제국 황실 일상을 나누며 아름다운 석조전의 정취를 품어보세요. <br><br>
-                        전문 해설사와 석조전에 담긴 황실의 역사를 만나고, 야외 테라스 카페에 준비된 가배차(커피)와 서양 디저트를 맛보며, <br>
-                        귀빈을 맞이하던 접견실에서 뮤지컬 공연 관람까지 궁궐의 낭만과 감동이 있는 덕수궁 석조전의 작은 연회에 여러분을 초대합니다.
+                        창덕궁 달빛기행은 은은 달빛아래 녹음이 어우러진 창덕궁에서 전문해설사와 함께 궁궐의 곳곳을 관람하며, <br>
+                        각 전각에 대한 해설과 전통예술공연을 관람할 수 있는 프로그램입니다.
+                        <br><br>
+                        창덕궁 정문인 돈화문에서 출발해 진선문 · 인정전 · 희정당 · 낙선재 · 상량정 · 부용지 · 불로문 · 애련정 · 연경당 · 후원 숲길을 이동하며 <br>
+                        창덕궁 달빛기행에서만 경험할 수 있는 특별한 감동을 선사할 것입니다.
                     </p>
                 </section>
                 <section id="image">
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="/resources/img/event/dsg/dsg1.png" alt="밤의 석조전 포스터">
+                                <img src="/resources/img/event/cdg/cdg1.jpg" alt="달빛기행 포스터">
                             </div>
                             <div class="swiper-slide">
-                                <img src="/resources/img/event/dsg/dsg2.jpg" alt="석조전 야간 탐방 1">
+                                <img src="/resources/img/event/cdg/cdg2.jpg" alt="돈화문">
                             </div>
                             <div class="swiper-slide">
-                                <img src="/resources/img/event/dsg/dsg3.jpg" alt="석조전 야간 탐방 2">
+                                <img src="/resources/img/event/cdg/cdg3.jpg" alt="금천교와 진선문">
                             </div>
                             <div class="swiper-slide">
-                                <img src="/resources/img/event/dsg/dsg4.jpg" alt="석조전 테라스 카페 체험 1">
+                                <img src="/resources/img/event/cdg/cdg4.jpg" alt="인정전">
                             </div>
                             <div class="swiper-slide">
-                                <img src="/resources/img/event/dsg/dsg5.jpg" alt="석조전 테라스 카페 체험 2">
+                                <img src="/resources/img/event/cdg/cdg5.jpg" alt="희정당">
                             </div>
                             <div class="swiper-slide">
-                                <img src="/resources/img/event/dsg/dsg6.jpg" alt="창작뮤지컬 <손탁호텔> 공연 1">
+                                <img src="/resources/img/event/cdg/cdg6.jpg" alt="낙선재">
                             </div>
                             <div class="swiper-slide">
-                                <img src="/resources/img/event/dsg/dsg7.jpg" alt="창작뮤지컬 <손탁호텔> 공연 2">
+                                <img src="/resources/img/event/cdg/cdg7.jpg" alt="상량정">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/resources/img/event/cdg/cdg8.jpg" alt="부용지">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/resources/img/event/cdg/cdg9.jpg" alt="불로문과 애련지">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/resources/img/event/cdg/cdg10.jpg" alt="연경당(공연-박접무)">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/resources/img/event/cdg/cdg11.jpg" alt="연경당(공연-산조춤)">
                             </div>
                         </div>
                         
@@ -121,7 +133,7 @@
                         </div>
                         
                         <!-- Styles -->
-                        <link href="/https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" rel="stylesheet">
+                        <link href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" rel="stylesheet">
                         <!-- Script -->
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.6/swiper-bundle.min.js"></script>
                 </section>
@@ -129,20 +141,17 @@
                     <div class="description">
                         <h3>프로그램 소개</h3>
                         <div>
-                            <h4>석조전 야간 탐방</h4>
-                            <p>황제의 궁궐 덕수궁에서 이색적인 모습과 특별한 사연을 가진 공간 석조전. 밤빛이 더해진 이 곳, 석조전에서 전문 해설가와 함께 석조전에 담긴 대한제국 황실의 역사를 만나보세요.</p>
-                            
-                            <h4>석조전 테라스 카페 체험</h4>
-                            <p>석조전 테라스에 특별한 공간을 마련하였습니다. 고종 황제가 즐겼던 가배(커피)와 디저트를 음미하며 석조전의 밤이 선사하는 맛과 멋을 즐겨보세요.</p>
-
-                            <h4>창작뮤지컬 <손탁호텔> 공연</h4>
-                            <p>궁에서 외국인을 위한 왕실 연회를 주관하고 국내외 귀빈들에게 서양 요리를 대접한 미지의 여성, 손탁여사. 대한제국 시기, 음악에 실어 전하는 그녀의 이야기를 들어보세요.</p>
+                            <h4>달빛기행 야간관람 코스 (약100분)</h4>
+                            <p>아름다운 창덕궁의 야경을 둘러보며 안내해설을 감상하실 수 있습니다.
+                                <br><br>
+                                <span class="numbering">①</span> 돈화문(집결, 해산) → <span class="numbering">②</span> 금천교 → <span class="numbering">③</span> 인정전 → <span class="numbering">④</span> 희정당 → <span class="numbering">⑤</span> 낙선재 → <span class="numbering">⑥</span> 상령정(대금연주) → <span class="numbering">⑦</span> 부용지·부용정(거문고연주) → <span class="numbering">⑧</span> 불로문・애련정(가곡) → <span class="numbering">⑨</span> 연경당(전통예술공연) → ⑩ 후원숲길
+                            </p>
                         </div>
                     </div>
                     <div class="description">
                         <h3>행사 기간</h3>
                         <div>
-                            <h4>6월 2일 ~ 6월 11일</h4>
+                            <h4>6월 21일 ~ 6월 23일</h4>
                             <table>
                                 <tr>
                                     <td class="title">시간</td>
@@ -150,13 +159,28 @@
                                 </tr>
                                 <tr>
                                     <td class="title">예매 기간</td>
-                                    <td>5월 21일 ~ 5월 28일</td>
+                                    <td>6월 2일 ~ 6월 8일</td>
                                 </tr>
                                 <tr>
                                     <td class="title">예매 시간</td>
-                                    <td>14 : 00 ~</td>
+                                    <td>15 : 00 ~</td>
                                 </tr>
                             </table>
+                            <br>
+                            <h4>10월 6일 ~ 10월 10일</h4>
+                            <table>
+                                <tr>
+                                    <td class="title">시간</td>
+                                    <td>19 : 20 ~ 23 : 30</td>
+                                </tr>
+                                <tr>
+                                    <td class="title">예매 기간</td>
+                                    <td>9월 16일 ~ 9월 25일</td>
+                                </tr>
+                                <tr>
+                                    <td class="title">예매 시간</td>
+                                    <td>15 : 00 ~</td>
+                                </tr>
                             </table>
                             <br>
                         </div>
@@ -165,27 +189,31 @@
                         <h3>오시는 길</h3>
                         <div id="way-to-come">
                             <iframe id="map"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.5438642980466!2d126.97257117645422!3d37.56580912416875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca28d3199c531%3A0x7a2d35df0efd2d8!2z642V7IiY6raB!5e0!3m2!1sko!2skr!4v1686151846558!5m2!1sko!2skr"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.881779069215!2d126.99028832645487!3d37.5814014232746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca25bce7408e3%3A0xff296b97da565068!2z7LC9642V6raB!5e0!3m2!1sko!2skr!4v1686151958650!5m2!1sko!2skr"
                                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                             <div id="how">
                                 <h4>지하철</h4>
                                 <ul>
-                                    <li class="labeling">- 시청역</li>
-                                    <li class="labeling">- 을지로입구역</li>
-                                    <li class="labeling">- 광화문역</li>
+                                    <li class="labeling">- 종로3가역(1,3,5호선) 6번 출구에서 도보로 10분</li>
+                                    <li class="labeling">- 안국역(3호선) 3번 출구에서 도보로 5분</li>
                                 </ul>
                                 <br>
-                                <h4 style="margin-bottom: 25px;">버스 : 시청역, 시청덕수궁, 시청앞.덕수궁, 서소문, 시청.서소문청사 등</h4>
-                                <h4>주차 : 덕수궁에는 주차시설이 없으니, 대중교통을 이용하여 주시기 바랍니다.</h4>
+                                <h4 style="margin-bottom: 25px;">버스</h4>
+                                <ul>
+                                    <li class="labeling">- 간선 : 109 151 162 171 172 272 601</li>
+                                    <li class="labeling">- 지선 : 7025</li>
+                                    <li class="labeling">- 순환 : 90S투어 91S투어</li>
+                                    <li class="labeling">- 공항 : 6011</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     <div class="description">
                         <h3>행사 문의</h3>
                         <div>
-                            <h4>한국문화재재단 밤의석조전 담당 02-XXXX-XXXX</h4>
+                            <h4>한국문화재재단 창덕궁 달빛기행 담당 02-XXXX-XXXX</h4>
                             <ul>
                                 <li class="labeling">※ 행사 기간은 추후 상황에 따라 변동될 수 있습니다.</li>
                                 <li class="labeling">※ 행사에 대한 기타 안내사항(우천취소 등)은 [열린 마당] 메뉴에서 확인 가능 합니다.</li>

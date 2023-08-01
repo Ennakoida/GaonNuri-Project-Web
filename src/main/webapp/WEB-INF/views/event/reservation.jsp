@@ -27,19 +27,19 @@
                         <li class="main-nav">
                             행사 소개
                             <ul id="description-menu">
-                                <a href="/event/description/gbg.jsp"><li>경복궁</li></a>
-                                <a href="/event/description/dsg.jsp"><li>덕수궁</li></a>
-                                <a href="/event/description/cgg.jsp"><li>창경궁</li></a>
-                                <a href="/event/description/cdg.jsp"><li>창덕궁</li></a>
-                                <a href="/event/description/jm.jsp"><li>종묘</li></a>
+                                <a href="/event/gbgDescription.do"><li>경복궁</li></a>
+                                <a href="/event/dsgDescription.do"><li>덕수궁</li></a>
+                                <a href="/event/cggDescription.do"><li>창경궁</li></a>
+                                <a href="/event/cdgDescription.do"><li>창덕궁</li></a>
+                                <a href="/event/jmDescription.do"><li>종묘</li></a>
                             </ul>
                         </li>
-                        <li class="main-nav"><a href="/event/reservation.html">행사 예매</a></li>
-                        <li class="main-nav"><a href="/hanbok/rentals.html">한복 대여</a></li>
+                        <li class="main-nav"><a href="/event/reservation.do">행사 예매</a></li>
+                        <li class="main-nav"><a href="/hanbok/rental.do">한복 대여</a></li>
                         <li class="main-nav"><a href="#">셔틀 버스</a></li>
                         <li class="main-nav">열린 마당
                             <ul id="community-menu">
-                                <a href="/notice/notice.html"><li>공지사항</li></a>
+                                <a href="/notice/notice.do"><li>공지사항</li></a>
                                 <a href="#"><li>Q&A</li></a>
                                 <a href="#"><li>마이페이지</li></a>
                             </ul>
@@ -50,8 +50,8 @@
                 <!-- 로그인, 회원가입, 한국어 네비게이션 -->
                 <nav id="sub-nav">
                     <ul>
-                        <li class="sub-nav"><a href="/user/login.html">로그인</a></li>
-                        <li class="sub-nav"><a href="/user/sign-up.html">회원가입</a></li>
+                        <li class="sub-nav"><a href="/user/login.do">로그인</a></li>
+                        <li class="sub-nav"><a href="/user/enroll.do">회원가입</a></li>
                         <li class="sub-nav">한국어 ▾
                             <ul id="LNG-menu">
                                 <li>한국어</li>
@@ -72,16 +72,16 @@
                     <div id="calendar"></div>
                     <!-- 예매 선택창 -->
                     <div id="reservation-input">
-                        <form action="./reservation.html" method="post">
+                        <form action="/event/reservation.do" method="post">
                             <div id="select-event">
                                 <label for="select-place">행사 선택</label><br>
                                 <select name="select-place" id="select-place" required>
                                     <option value="" disabled selected hidden>고궁을 선택해 주세요.</option>
-                                        <option value="">경복궁</option>
-                                        <option value="">덕수궁</option>
-                                        <option value="">창경궁</option>
-                                        <option value="">창덕궁</option>
-                                        <option value="">종묘</option>
+                                        <option value="경복궁">경복궁</option>
+                                        <option value="덕수궁">덕수궁</option>
+                                        <option value="창경궁">창경궁</option>
+                                        <option value="창덕궁">창덕궁</option>
+                                        <option value="종묘">종묘</option>
                                 </select>
                                 <br>
                                 <label for="select-date">날짜 선택</label><br><input type="date" name="select-date" id="select-date" required>
@@ -89,8 +89,8 @@
                                 <label for="select-time">시간 선택</label><br>
                                 <select name="select-time" id="select-time" required>
                                     <option value="" disabled selected hidden>방문 시간을 선택해 주세요.</option>
-                                        <option value="">18 : 40</option>
-                                        <option value="">19 : 40</option>
+                                        <option value="18 : 40">18 : 40</option>
+                                        <option value="19 : 40">19 : 40</option>
                                 </select>
                                 <br>
                                 <label for="select-people">예매 인원 선택</label><br><input type="number" name="select-people" id="select-people" min="1" max="10" placeholder="예매 인원을 선택해 주세요. (최대 10명)" required>
@@ -98,7 +98,7 @@
                             <div id="user-info">
                                 <div>
                                     <h3>예매자 정보</h3>
-                                    <label for="login-user"><input type="checkbox" name="login-user" id="login-user"> 가입 정보와 동일</label>
+                                    <label for="login-user"><input type="checkbox" name="login-user" id="login-user" value="Y"> 가입 정보와 동일</label>
                                 </div>
                                 <label for="user-name">이름</label><br><input type="text" name="user-name" id="user-name" required>
                                 <br>

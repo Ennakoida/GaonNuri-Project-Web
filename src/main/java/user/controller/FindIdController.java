@@ -1,4 +1,4 @@
-package event.controller;
+package user.controller;
 
 import java.io.IOException;
 
@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ReserveController
+ * Servlet implementation class FindIdController
  */
-@WebServlet("/event/reservation.do")
-public class ReserveController extends HttpServlet {
+@WebServlet("/user/findId.do")
+public class FindIdController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReserveController() {
+    public FindIdController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,8 +28,7 @@ public class ReserveController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 화면 보이기
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/event/reservation.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/user/find-id.jsp");
 		view.forward(request, response);
 	}
 
@@ -37,7 +36,8 @@ public class ReserveController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 실제 기능
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

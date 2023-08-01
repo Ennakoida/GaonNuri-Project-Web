@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!-- 창경궁 행사 소개 페이지 -->
+<!-- 덕수궁 행사 소개 페이지 -->
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="/resources/css/common.css">
         <link rel="stylesheet" href="/resources/css/font.css">
         <link rel="stylesheet" href="/resources/css/event/description.css">
-        <title>창경궁 행사 소개</title>
+        <title>덕수궁 행사 소개</title>
     </head>
     <body>
         <div id="container">
@@ -26,19 +26,19 @@
                         <li class="main-nav">
                             행사 소개
                             <ul id="description-menu">
-                                <a href="/gbg.jsp"><li>경복궁</li></a>
-                                <a href="/dsg.jsp"><li>덕수궁</li></a>
-                                <a href="/cgg.jsp"><li>창경궁</li></a>
-                                <a href="/cdg.jsp"><li>창덕궁</li></a>
-                                <a href="/jm.jsp"><li>종묘</li></a>
+                                <a href="/event/gbgDescription.do"><li>경복궁</li></a>
+                                <a href="/event/dsgDescription.do"><li>덕수궁</li></a>
+                                <a href="/event/cggDescription.do"><li>창경궁</li></a>
+                                <a href="/event/cdgDescription.do"><li>창덕궁</li></a>
+                                <a href="/event/jmDescription.do"><li>종묘</li></a>
                             </ul>
                         </li>
-                        <li class="main-nav"><a href="/event/reservation.html">행사 예매</a></li>
-                        <li class="main-nav"><a href="/hanbok/rentals.html">한복 대여</a></li>
+                        <li class="main-nav"><a href="/event/reservation.do">행사 예매</a></li>
+                        <li class="main-nav"><a href="/hanbok/rental.do">한복 대여</a></li>
                         <li class="main-nav"><a href="#">셔틀 버스</a></li>
                         <li class="main-nav">열린 마당
                             <ul id="community-menu">
-                                <a href="/notice/notice.html"><li>공지사항</li></a>
+                                <a href="/notice/notice.do"><li>공지사항</li></a>
                                 <a href="#"><li>Q&A</li></a>
                                 <a href="#"><li>마이페이지</li></a>
                             </ul>
@@ -49,8 +49,8 @@
                 <!-- 로그인, 회원가입, 한국어 네비게이션 -->
                 <nav id="sub-nav">
                     <ul>
-                        <li class="sub-nav"><a href="/user/login.html">로그인</a></li>
-                        <li class="sub-nav"><a href="/user/sign-up.html">회원가입</a></li>
+                        <li class="sub-nav"><a href="/user/login.do">로그인</a></li>
+                        <li class="sub-nav"><a href="/user/enroll.do">회원가입</a></li>
                         <li class="sub-nav">한국어 ▾
                             <ul id="LNG-menu">
                                 <li>한국어</li>
@@ -63,42 +63,44 @@
             </header>
             <main>
                 <section id="description-title">
-                    <h1>창경궁</h1>
+                    <h1>덕수궁</h1>
                     <div id="colorBox"></div>
                 </section>
                 <section id="short-description">
                     <div id="red-line"></div>
-                    <h2>궁궐 일상모습 재현 및 체험</h2>
+                    <h2>밤의 석조전</h2>
                     <br>
-                    <h3 style="font-family: 'Chosunilbo_myungjo', sans-serif, serif; color:#b5b5b5">300여 년 전으로의 시간 여행, 창경궁 1752년</h3>
+                    <h3 style="font-family: 'Chosunilbo_myungjo', sans-serif, serif; color:#b5b5b5;">오얏꽃 흩날리는 봄밤, 대한제국 황실의 문이 열립니다.</h3>
                     <br><br><br>
                     <p>
-                        ‘궁궐 일상모습 재현 및 체험’ 은 조선시대 창경궁에서 벌어진 에피소드를 극으로 재현하여 역사 속 발자취를 따라가 보는 프로그램으로 <br>
-                        조선시대의 궁궐 생활상을 관람객이 직접 체험해 볼 수 있도록 기획된 행사입니다.
-                        <br><br>
-                        창경궁 고유의 아름다움과 더불어 300여 년 전 영조 임금의 일상의 현장을 통해 과거가 아닌 현재에 살아있는 고궁을 느껴보시기 바랍니다.
+                        황제의 궁궐, 덕수궁에서 전문 해설사와 함께 대한제국 황실 일상을 나누며 아름다운 석조전의 정취를 품어보세요. <br><br>
+                        전문 해설사와 석조전에 담긴 황실의 역사를 만나고, 야외 테라스 카페에 준비된 가배차(커피)와 서양 디저트를 맛보며, <br>
+                        귀빈을 맞이하던 접견실에서 뮤지컬 공연 관람까지 궁궐의 낭만과 감동이 있는 덕수궁 석조전의 작은 연회에 여러분을 초대합니다.
                     </p>
                 </section>
                 <section id="image">
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="/resources/img/event/cgg/cgg1.jpg" alt="창경궁 체험">
+                                <img src="/resources/img/event/dsg/dsg1.png" alt="밤의 석조전 포스터">
                             </div>
                             <div class="swiper-slide">
-                                <img src="/resources/img/event/cgg/cgg2.jpg" alt="창경궁 체험">
+                                <img src="/resources/img/event/dsg/dsg2.jpg" alt="석조전 야간 탐방 1">
                             </div>
                             <div class="swiper-slide">
-                                <img src="/resources/img/event/cgg/cgg3.jpg" alt="창경궁 체험">
+                                <img src="/resources/img/event/dsg/dsg3.jpg" alt="석조전 야간 탐방 2">
                             </div>
                             <div class="swiper-slide">
-                                <img src="/resources/img/event/cgg/cgg4.jpg" alt="창경궁 체험">
+                                <img src="/resources/img/event/dsg/dsg4.jpg" alt="석조전 테라스 카페 체험 1">
                             </div>
                             <div class="swiper-slide">
-                                <img src="/resources/img/event/cgg/cgg5.jpg" alt="창경궁 체험">
+                                <img src="/resources/img/event/dsg/dsg5.jpg" alt="석조전 테라스 카페 체험 2">
                             </div>
                             <div class="swiper-slide">
-                                <img src="/resources/img/event/cgg/cgg6.jpg" alt="창경궁 체험">
+                                <img src="/resources/img/event/dsg/dsg6.jpg" alt="창작뮤지컬 <손탁호텔> 공연 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/resources/img/event/dsg/dsg7.jpg" alt="창작뮤지컬 <손탁호텔> 공연 2">
                             </div>
                         </div>
                         
@@ -119,42 +121,42 @@
                         </div>
                         
                         <!-- Styles -->
-                        <link href="/https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" rel="stylesheet">
+                        <link href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" rel="stylesheet">
                         <!-- Script -->
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.6/swiper-bundle.min.js"></script>
                 </section>
                 <section id="event-description">
                     <div class="description">
-                        <h3>시놉시스</h3>
+                        <h3>프로그램 소개</h3>
                         <div>
-                            <h4>왕실의 슬품과 일상. 그리고 희망</h4>
-                            <p>
-                                1752년은 조선의 왕실에 비극과 희망이 교차하는 시기였다. <br><br>
-                                1750년 경춘전에서 태어난 의소세손이 1752년 3월, 통명전에서 갑작스런 죽음을 맞이하며 그를 아끼던 영조는 크게 상심했다. <br>
-                                그렇지만 얼마 뒤인 9월에 경춘전에서 다시 세손을 얻었으니 이 아이가 바로 나중에 정조가 된다. <br>
-                                곧 몇 달 사이, 퉁명전과 경춘전에서 왕실의 운명을 가를 삶과 죽음의 모습이 교차한 것이다. <br><br>
-                                한편, 이러한 왕실 움직임 속에서 약간은 소외된 느낌을 주는 인물이 바로 세자이다. <br>
-                                이 시기에 이르러 세자는 대리청정 등을 두고 아버지 영조와 사이가 벌어지고 있었다.
-                            </p>
+                            <h4>석조전 야간 탐방</h4>
+                            <p>황제의 궁궐 덕수궁에서 이색적인 모습과 특별한 사연을 가진 공간 석조전. 밤빛이 더해진 이 곳, 석조전에서 전문 해설가와 함께 석조전에 담긴 대한제국 황실의 역사를 만나보세요.</p>
+                            
+                            <h4>석조전 테라스 카페 체험</h4>
+                            <p>석조전 테라스에 특별한 공간을 마련하였습니다. 고종 황제가 즐겼던 가배(커피)와 디저트를 음미하며 석조전의 밤이 선사하는 맛과 멋을 즐겨보세요.</p>
+
+                            <h4>창작뮤지컬 <손탁호텔> 공연</h4>
+                            <p>궁에서 외국인을 위한 왕실 연회를 주관하고 국내외 귀빈들에게 서양 요리를 대접한 미지의 여성, 손탁여사. 대한제국 시기, 음악에 실어 전하는 그녀의 이야기를 들어보세요.</p>
                         </div>
                     </div>
                     <div class="description">
                         <h3>행사 기간</h3>
                         <div>
-                            <h4>10월 1일 ~ 10월 5일</h4>
+                            <h4>6월 2일 ~ 6월 11일</h4>
                             <table>
                                 <tr>
                                     <td class="title">시간</td>
-                                    <td>12 : 30 ~ 13 : 30</td>
+                                    <td>18 : 40 | 19 :  40</td>
                                 </tr>
                                 <tr>
                                     <td class="title">예매 기간</td>
-                                    <td>9월 27일 ~ 10월 4일</td>
+                                    <td>5월 21일 ~ 5월 28일</td>
                                 </tr>
                                 <tr>
                                     <td class="title">예매 시간</td>
-                                    <td>14 : 00 ~ (선착순 마감)</td>
+                                    <td>14 : 00 ~</td>
                                 </tr>
+                            </table>
                             </table>
                             <br>
                         </div>
@@ -163,29 +165,27 @@
                         <h3>오시는 길</h3>
                         <div id="way-to-come">
                             <iframe id="map"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12648.007615590745!2d126.98885107113242!3d37.57857285822762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2d63cdfd837%3A0x4ae06b4de851f3cf!2z7LC96rK96raB!5e0!3m2!1sko!2skr!4v1686151908915!5m2!1sko!2skr"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.5438642980466!2d126.97257117645422!3d37.56580912416875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca28d3199c531%3A0x7a2d35df0efd2d8!2z642V7IiY6raB!5e0!3m2!1sko!2skr!4v1686151846558!5m2!1sko!2skr"
                                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                             <div id="how">
                                 <h4>지하철</h4>
                                 <ul>
-                                    <li class="labeling">- 4호선 혜화역 4번출구 300m 직진</li>
-                                    <li class="labeling">- 횡단보도 건너 왼쪽길로 직진 300m</li>
+                                    <li class="labeling">- 시청역</li>
+                                    <li class="labeling">- 을지로입구역</li>
+                                    <li class="labeling">- 광화문역</li>
                                 </ul>
                                 <br>
-                                <h4 style="margin-bottom: 25px;">버스</h4>
-                                <ul>
-                                    <li class="labeling">- 혜화동로터리 방향에서 홍화문쪽으로(정류소번호 : 01002)</li>
-                                    <li class="labeling">- 원남동사거리 방향에서 홍화문쪽으로(정류소번호 : 01224)</li>
-                                </ul>
+                                <h4 style="margin-bottom: 25px;">버스 : 시청역, 시청덕수궁, 시청앞.덕수궁, 서소문, 시청.서소문청사 등</h4>
+                                <h4>주차 : 덕수궁에는 주차시설이 없으니, 대중교통을 이용하여 주시기 바랍니다.</h4>
                             </div>
                         </div>
                     </div>
                     <div class="description">
                         <h3>행사 문의</h3>
                         <div>
-                            <h4>한국문화재재단 궁궐 일상모습 재현 및 체험 담당 02-XXXX-XXXX</h4>
+                            <h4>한국문화재재단 밤의석조전 담당 02-XXXX-XXXX</h4>
                             <ul>
                                 <li class="labeling">※ 행사 기간은 추후 상황에 따라 변동될 수 있습니다.</li>
                                 <li class="labeling">※ 행사에 대한 기타 안내사항(우천취소 등)은 [열린 마당] 메뉴에서 확인 가능 합니다.</li>

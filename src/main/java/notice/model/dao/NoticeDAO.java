@@ -15,7 +15,7 @@ public class NoticeDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		List<Notice> nList = new ArrayList<Notice>();
-		String query = "SELECT * FROM NOTICE_TBL";
+		String query = "SELECT * FROM NOTICE_TBL ORDER BY NOTICE_NO DESC";
 		
 		try {
 			pstmt = conn.prepareStatement(query);

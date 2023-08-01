@@ -39,6 +39,7 @@ public class UserService {
 		
 		// DAO 호출 (연결도 넘겨줘야함)
 		User uOne = uDao.selectCheckLogin(conn, user);
+		jdbcTemplate.close(conn);
 		return uOne;
 	}
 

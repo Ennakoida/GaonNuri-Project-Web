@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="/resources/css/reset.css">
         <link rel="stylesheet" href="/resources/css/common.css">
         <link rel="stylesheet" href="/resources/css/font.css">
-        <link rel="stylesheet" href="/resources/css/user/sign-up.css">
+        <link rel="stylesheet" href="/resources/css/user/enroll.css">
         <title>회원가입</title>
     </head>
     <body>
@@ -26,19 +26,19 @@
                         <li class="main-nav">
                             행사 소개
                             <ul id="description-menu">
-                                <a href="/event/description/gbg.jsp"><li>경복궁</li></a>
-                                <a href="/event/description/dsg.jsp"><li>덕수궁</li></a>
-                                <a href="/event/description/cgg.jsp"><li>창경궁</li></a>
-                                <a href="/event/description/cdg.jsp"><li>창덕궁</li></a>
-                                <a href="/event/description/jm.jsp"><li>종묘</li></a>
+                                <a href="/event/gbgDescription.do"><li>경복궁</li></a>
+                                <a href="/event/dsgDescription.do"><li>덕수궁</li></a>
+                                <a href="/event/cggDescription.do"><li>창경궁</li></a>
+                                <a href="/event/cdgDescription.do"><li>창덕궁</li></a>
+                                <a href="/event/jmDescription.do"><li>종묘</li></a>
                             </ul>
                         </li>
-                        <li class="main-nav"><a href="/event/reservation.html">행사 예매</a></li>
-                        <li class="main-nav"><a href="/hanbok/rentals.html">한복 대여</a></li>
+                        <li class="main-nav"><a href="/event/reservation.do">행사 예매</a></li>
+                        <li class="main-nav"><a href="/hanbok/rental.do">한복 대여</a></li>
                         <li class="main-nav"><a href="#">셔틀 버스</a></li>
                         <li class="main-nav">열린 마당
                             <ul id="community-menu">
-                                <a href="/notice/notice.html"><li>공지사항</li></a>
+                                <a href="/notice/notice.do"><li>공지사항</li></a>
                                 <a href="#"><li>Q&A</li></a>
                                 <a href="#"><li>마이페이지</li></a>
                             </ul>
@@ -49,8 +49,8 @@
                 <!-- 로그인, 회원가입, 한국어 네비게이션 -->
                 <nav id="sub-nav">
                     <ul>
-                        <li class="sub-nav"><a href="/user/login.html">로그인</a></li>
-                        <li class="sub-nav"><a href="/user/sign-up.html">회원가입</a></li>
+                        <li class="sub-nav"><a href="/user/login.do">로그인</a></li>
+                        <li class="sub-nav"><a href="/user/enroll.do">회원가입</a></li>
                         <li class="sub-nav">한국어 ▾
                             <ul id="LNG-menu">
                                 <li>한국어</li>
@@ -62,19 +62,19 @@
                 </nav>
             </header>
             <main>
-                <section id="signUp-title">
+                <section id="enroll-title">
                     <h1>회원가입</h1>
                     <p>회원가입 하시면 홈페이지 내에 다양한 서비스를 이용하실 수 있습니다.</p>
                     <div id="colorBox"></div>
                 </section>
-                <section id="signUp">
-                    <div id="signUp-input">
+                <section id="enroll">
+                    <div id="enroll-input">
                         <form action="/user/enroll.do" method="post">
                             <label for="user-id">아이디</label><br><input type="text" name="user-id" id="user-id" placeholder="6 ~ 20자 영문, 숫자" required>
                             <br>
                             <label for="user-pw">비밀번호</label><br><input type="password" name="user-pw" id="user-pw" placeholder="8 ~ 12자 영문, 숫자, 특수문자" required>
                             <br>
-                            <label for="user-re-pw">비밀번호 확인</label><br><input type="password" name="user-pw-check" id="user-pw-check" placeholder="비밀번호를 다시 입력해 주세요." required>
+                            <label for="user-pw-check">비밀번호 확인</label><br><input type="password" id="user-pw-check" placeholder="비밀번호를 다시 입력해 주세요." required>
                             <br>
                             <label for="user-name">이름</label><br><input type="text" name="user-name" id="user-name" required>
                             <br>
@@ -82,12 +82,12 @@
                             <br>
                             <label for="user-email">이메일 (선택)</label><br><input type="email" name="user-email" id="user-email">
                             <br>
-                            <label for="user-event-yn"><input type="checkbox" name="user-event-yn" id="user-event-yn"> SMS, 이메일로 상품 및 이벤트 정보를 받겠습니다. (선택)</label>
+                            <label for="user-event-yn"><input type="checkbox" name="user-event-yn" id="user-event-yn" value="Y"> SMS, 이메일로 상품 및 이벤트 정보를 받겠습니다. (선택)</label>
                             <br>
-                            <input type="submit" value="가입하기" id="signUp-btn">
+                            <input type="submit" value="가입하기" id="enroll-btn">
                         </form>
                     </div>
-                    <div id="sns-signUp">
+                    <div id="sns-enroll">
                         <!-- 각 기업에서 제공하는 표준 logo resource 사용 -->
                         <button id="naver">
                             <div>
@@ -119,20 +119,35 @@
 
             <!-- 상단버튼-->
             <aside id="btn_top">
-                <a href="javascript:window.scrollTo(0,0);"><img src='.//resources/img/top.png' alt='top' style="width: 35px;"/></a>
+                <a href="javascript:window.scrollTo(0,0);"><img src='/resources/img/top.png' alt='top' style="width: 35px;"/></a>
             </aside>
             <!-- 하단 버튼 -->
             <aside id="btn_bottom">
-                <a href="javascript:window.scrollTo(0,document.body.scrollHeight);"><img src='.//resources/img/bottom.png' alt='bottom' style="width: 35px;"/></a>
+                <a href="javascript:window.scrollTo(0,document.body.scrollHeight);"><img src='/resources/img/bottom.png' alt='bottom' style="width: 35px;"/></a>
             </aside>
         </div>
 
         <script>
-            document.querySelectorAll("input").forEach(input => {
-                input.addeventListener("invalid", () => {
-                    document.forms[0].classList.add("was-validated")
-                })
-            })
+	        document.querySelectorAll("input").forEach(input => {
+	            input.addeventListener("invalid", () => {
+	                document.forms[0].classList.add("was-validated")
+	            })
+	        })
+        </script>
+        <script>
+            var userPw = document.getElementById("user-pw");
+            var userPwCheck = document.getElementById("user-pw-check");
+
+            function checkPassword() {
+                if(userPw.value != userPwCheck.value){
+                    userPwCheck.setCustomValidity("비밀번호가 일치하지 않습니다."); 
+                } else {
+                    userPwCheck.setCustomValidity(''); 
+                }
+            }
+
+            userPw.onchange = checkPassword;
+            userPwCheck.onkeyup = checkPassword;
         </script>
     </body>
 </html>
