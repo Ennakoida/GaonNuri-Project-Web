@@ -7,21 +7,19 @@ public class Reserve {
 	private Date reserveDate;
 	private String reserveTime;
 	private int reservePeople;
-	private String loginUserCheck;
 	private String reserveName;
 	private String reservePhone;
 	private String reserveEmail;
 	
 	public Reserve() {	}
 	
-	public Reserve(String reservePlace, Date reserveDate, String reserveTime, int reservePeople, String loginUserCheck,
+	public Reserve(String reservePlace, Date reserveDate, String reserveTime, int reservePeople, 
 			String reserveName, String reservePhone, String reserveEmail) {
 		super();
 		this.reservePlace = reservePlace;
 		this.reserveDate = reserveDate;
 		this.reserveTime = reserveTime;
 		this.reservePeople = reservePeople;
-		this.loginUserCheck = loginUserCheck;
 		this.reserveName = reserveName;
 		this.reservePhone = reservePhone;
 		this.reserveEmail = reserveEmail;
@@ -51,12 +49,6 @@ public class Reserve {
 	public void setReservePeople(int reservePeople) {
 		this.reservePeople = reservePeople;
 	}
-	public String getLoginUserCheck() {
-		return loginUserCheck;
-	}
-	public void setLoginUserCheck(String loginUserCheck) {
-		this.loginUserCheck = loginUserCheck;
-	}
 	public String getReserveName() {
 		return reserveName;
 	}
@@ -79,8 +71,8 @@ public class Reserve {
 	@Override
 	public String toString() {
 		return "행사예매 [행사=" + reservePlace + ", 날짜=" + reserveDate + ", 시간=" + reserveTime
-				+ ", 인원=" + reservePeople + ", 가입정보동일여부=" + loginUserCheck + ", 예매자이름="
-				+ reserveName + ", 예매자전화번호=" + reservePhone + ", 예매자이메일=" + reserveEmail + "]";
+				+ ", 인원=" + reservePeople + ",  예매자이름=" + reserveName + ", 예매자전화번호=" 
+				+ reservePhone + ", 예매자이메일=" + reserveEmail + "]";
 	}
 	
 }

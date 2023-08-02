@@ -1,67 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!-- 행사 예매 페이지 -->
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/resources/css/reset.css">
-        <link rel="stylesheet" href="/resources/css/common.css">
-        <link rel="stylesheet" href="/resources/css/font.css">
+		<jsp:include page="/WEB-INF/views/include/head.jsp"></jsp:include>
         <link rel="stylesheet" href="/resources/css/event/reservation.css">
         <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
         <title>행사 예매</title>
     </head>
     <body>
         <div id="container">
-            <header>
-                <!-- 로고 -->
-                <div id="logo">
-                    <h1><a href="/index.jsp">가온누리</a></h1>
-                </div>
-                <!-- 메인 네비게이션 -->
-                <nav id = "main-nav">
-                    <ul>
-                        <li class="main-nav">
-                            행사 소개
-                            <ul id="description-menu">
-                                <a href="/event/gbgDescription.do"><li>경복궁</li></a>
-                                <a href="/event/dsgDescription.do"><li>덕수궁</li></a>
-                                <a href="/event/cggDescription.do"><li>창경궁</li></a>
-                                <a href="/event/cdgDescription.do"><li>창덕궁</li></a>
-                                <a href="/event/jmDescription.do"><li>종묘</li></a>
-                            </ul>
-                        </li>
-                        <li class="main-nav"><a href="/event/reservation.do">행사 예매</a></li>
-                        <li class="main-nav"><a href="/hanbok/rental.do">한복 대여</a></li>
-                        <li class="main-nav"><a href="#">셔틀 버스</a></li>
-                        <li class="main-nav">열린 마당
-                            <ul id="community-menu">
-                                <a href="/notice/notice.do"><li>공지사항</li></a>
-                                <a href="#"><li>Q&A</li></a>
-                                <a href="#"><li>마이페이지</li></a>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-
-                <!-- 로그인, 회원가입, 한국어 네비게이션 -->
-                <nav id="sub-nav">
-                    <ul>
-                        <li class="sub-nav"><a href="/user/login.do">로그인</a></li>
-                        <li class="sub-nav"><a href="/user/enroll.do">회원가입</a></li>
-                        <li class="sub-nav">한국어 ▾
-                            <ul id="LNG-menu">
-                                <li>한국어</li>
-                                <li>English</li>
-                                <li>日本語</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
+			<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+			<input type="hidden" name="userId" value="${ user.userId }">
             <main>
                 <section id="reservation-title">
                     <h1>행사 예매</h1>
@@ -98,7 +50,9 @@
                             <div id="user-info">
                                 <div>
                                     <h3>예매자 정보</h3>
-                                    <label for="login-user"><input type="checkbox" name="login-user" id="login-user" value="Y"> 가입 정보와 동일</label>
+                                    <c:if test="${ sessionScope.userId ne null }">
+                                    	<label for="login-user"><input type="checkbox" name="login-user" id="login-user" value="Y"> 가입 정보와 동일</label>
+                                    </c:if>
                                 </div>
                                 <label for="user-name">이름</label><br><input type="text" name="user-name" id="user-name" required>
                                 <br>
@@ -115,20 +69,8 @@
                     </div>
                 </section>
             </main>
-            <footer>
-                <!-- copyright -->
-                ⓒ 2023. Park Yeji. All right reserved <br>
-                위 사이트에 기입된 정보는 실제와 다를 수 있습니다.
-            </footer>
-
-            <!-- 상단버튼-->
-            <aside id="btn_top">
-                <a href="javascript:window.scrollTo(0,0);"><img src='/resources/img/top.png' alt='top' style="width: 35px;"/></a>
-            </aside>
-            <!-- 하단 버튼 -->
-            <aside id="btn_bottom">
-                <a href="javascript:window.scrollTo(0,document.body.scrollHeight);"><img src='/resources/img/bottom.png' alt='bottom' style="width: 35px;"/></a>
-            </aside>
+            <jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
+            <jsp:include page="/WEB-INF/views/include/asideMovePageBtn.jsp"></jsp:include>
         </div>
 
 
@@ -211,12 +153,25 @@
 
         <!-- 버튼 이벤트 -->
         <script>
+//             // 예매자 정보 동일 선택 시, 자동 입력
+//             document.getElementById("login-user").addEventListener("change", function(){
+//                 if(document.getElementById("login-user").checked){
+//                     document.getElementById("user-name").value = "홍길동";
+//                     document.getElementById("user-phone").value = "01011112222";
+//                     document.getElementById("user-email").value = "xxx@xxx.xxx";
+//                 } else {
+//                     document.getElementById("user-name").value = "";
+//                     document.getElementById("user-phone").value = "";
+//                     document.getElementById("user-email").value = "";
+//                 }
+//             });
+            
             // 예매자 정보 동일 선택 시, 자동 입력
             document.getElementById("login-user").addEventListener("change", function(){
                 if(document.getElementById("login-user").checked){
-                    document.getElementById("user-name").value = "홍길동";
-                    document.getElementById("user-phone").value = "01011112222";
-                    document.getElementById("user-email").value = "xxx@xxx.xxx";
+                    document.getElementById("user-name").value = ${ user.userName };
+                    document.getElementById("user-phone").value = ${ user.userPhone };
+                    document.getElementById("user-email").value = ${ user.userEmail };
                 } else {
                     document.getElementById("user-name").value = "";
                     document.getElementById("user-phone").value = "";

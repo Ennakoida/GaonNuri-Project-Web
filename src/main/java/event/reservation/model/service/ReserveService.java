@@ -5,6 +5,7 @@ import java.sql.Connection;
 import common.JDBCTemplate;
 import event.reservation.model.dao.ReserveDAO;
 import event.reservation.model.vo.Reserve;
+import user.model.vo.User;
 
 public class ReserveService {
 	
@@ -31,6 +32,14 @@ public class ReserveService {
 		}
 		jdbcTemplate.close(conn);
 		return result;
+	}
+
+	public User selectOneById(String userId) {
+		Connection conn = jdbcTemplate.createConnection();
+		
+		User user = rDao.selectOneById(conn, userId);
+		jdbcTemplate.close(conn);
+		return user;
 	}
 
 }

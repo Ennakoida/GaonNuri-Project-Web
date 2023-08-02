@@ -64,6 +64,61 @@ public class UserDAO {
 		return uOne;
 	}
 	
+	public User selectIdByPhone(Connection conn, String userPhone) {
+		String query = "SELECT * FROM USER_TBL WHERE USER_PHONE = ?";
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		User uOne = null;
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, userPhone);
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				uOne = rsetToUser(rset);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return uOne;
+	}
+
+	public int selectIdByPhone(Connection conn, User user) {
+		String query = "SELECT COUNT(*) FROM USER_TBL WHERE USER_ID = ? AND USER_PHONE = ?";
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		int resultCount = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, user.getuserId());
+			pstmt.setString(2, user.getuserPhone());
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				resultCount = rset.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return resultCount;
+	}
+
 	private User rsetToUser(ResultSet rset) throws SQLException {
 		User user = new User();
 		user.setuserId(rset.getString(1));

@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import user.model.service.UserService;
+import user.model.vo.User;
+
 /**
  * Servlet implementation class FindIdController
  */
@@ -36,8 +39,22 @@ public class FindIdController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		UserService service = new UserService();
+		
+		String userPhone = request.getParameter("user-phone");
+		User uOne = service.selectIdByPhone(userPhone);
+		
+		if(uOne != null) {
+			request.setAttribute("what", "아이디");
+			request.setAttribute("found", uOne.getuserId());
+			request.setAttribute("url", "/user/login.do");
+			request.getRequestDispatcher("/WEB-INF/views/user/successFinding.jsp").forward(request, response);
+		} else {
+			request.setAttribute("what", "아이디");
+			request.setAttribute("msg", "일치하는 아이디가 없습니다.");
+			request.setAttribute("url", "/user/findId.do");
+			request.getRequestDispatcher("/WEB-INF/views/user/failedFinding.jsp").forward(request, response);
+		}
 	}
 
 }

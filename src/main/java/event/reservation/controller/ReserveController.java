@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import event.reservation.model.service.ReserveService;
 import event.reservation.model.vo.Reserve;
+import user.model.vo.User;
 
 /**
  * Servlet implementation class ReserveController
@@ -37,6 +38,12 @@ public class ReserveController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 화면 보이기
+		ReserveService service = new ReserveService();
+		String userId = request.getParameter("userId");
+		User user = service.selectOneById(userId);
+		
+		request.setAttribute("user", user);
+		
 		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/event/reservation.jsp");
 		view.forward(request, response);
 	}
@@ -58,12 +65,12 @@ public class ReserveController extends HttpServlet {
 		Date reserveDate = Date.valueOf(date);
 		String reserveTime = request.getParameter("select-time");
 		int reservePeople = Integer.parseInt(request.getParameter("select-people"));
-		String loginUserCheck = request.getParameter("login-user");
-		loginUserCheck = loginUserCheck != null ? "Y" : "N";
+//		String loginUserCheck = request.getParameter("login-user");
+//		loginUserCheck = loginUserCheck != null ? "Y" : "N";
 		String reserveName = request.getParameter("user-name");
 		String reservePhone = request.getParameter("user-phone");
 		String reserveEmail = request.getParameter("user-email");
-		Reserve reserve = new Reserve(reservePlace, reserveDate, reserveTime, reservePeople, loginUserCheck, reserveName, reservePhone, reserveEmail);
+		Reserve reserve = new Reserve(reservePlace, reserveDate, reserveTime, reservePeople, reserveName, reservePhone, reserveEmail);
 		
 		// insert
 		int result = service.insertReserve(reserve);

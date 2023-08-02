@@ -43,4 +43,20 @@ public class UserService {
 		return uOne;
 	}
 
+	public User selectIdByPhone(String userPhone) {
+		Connection conn = jdbcTemplate.createConnection();
+		
+		User uOne = uDao.selectIdByPhone(conn, userPhone);
+		jdbcTemplate.close(conn);
+		return uOne;
+	}
+
+	public int selectPwByIdPhone(User user) {
+		Connection conn = jdbcTemplate.createConnection();
+		
+		int resultCount = uDao.selectIdByPhone(conn, user);
+		jdbcTemplate.close(conn);
+		return resultCount;
+	}
+
 }
