@@ -11,14 +11,20 @@ import notice.model.vo.Notice;
 
 public class NoticeDAO {
 
-	public List<Notice> selectNoticeList(Connection conn) {
+	public List<Notice> selectNoticeList(Connection conn, int currentPage) {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		List<Notice> nList = new ArrayList<Notice>();
-		String query = "SELECT * FROM NOTICE_TBL ORDER BY NOTICE_NO DESC";
+//		String query = "SELECT * FROM NOTICE_TBL ORDER BY NOTICE_NO DESC";
+		String query = "SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY NOTICE_NO DESC) ROW_NUM, NOTICE_TBL.* FROM NOTICE_TBL) WHERE ROW_NUM BETWEEN ? AND ?";
+		int recordCountPerPage = 10;
+		int start = currentPage * recordCountPerPage - (recordCountPerPage - 1);		
+		int end = currentPage * recordCountPerPage;
 		
 		try {
 			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
 			rset = pstmt.executeQuery();
 			
 			while(rset.next()) {
@@ -36,6 +42,44 @@ public class NoticeDAO {
 			}
 		}
 		return nList;
+	}
+	
+	public String generagePageNavi(int currentPage) {		
+		int totalCount = 102; // 전체 게시물의 수
+		int recordCountPerPage = 10; // 한 페이지당 수
+		int naviTotalCount = 0; // 네비게이터의 수
+		
+		if(totalCount % recordCountPerPage > 0)
+			naviTotalCount = totalCount / recordCountPerPage + 1;
+		else
+			naviTotalCount = totalCount / recordCountPerPage;
+		
+		int naviCountPerPage = 5;
+		int startNavi = ((currentPage - 1) / naviCountPerPage) * naviCountPerPage + 1;
+		int endNavi = startNavi + naviCountPerPage - 1;
+				
+		if(endNavi > naviTotalCount) { 
+			endNavi = naviTotalCount;
+		}
+
+		StringBuilder result = new StringBuilder();
+		if(startNavi != 1) {
+			result.append("<li style='cursor: pointer;' onclick=\"location.href='/notice/notice.do?currentPage=" + (startNavi - 1) + "'\"><</li> ");
+		}else {
+			result.append("<li><</li>");
+		}
+
+		for(int i = startNavi; i <= endNavi; i++) {
+			result.append("<li onclick=\"location.href='/notice/notice.do?currentPage=" + i + "'\">" + i + "</li>&nbsp;&nbsp;"); // \" : "를 문자열로 인식하기 위한 escape가 포함 (그냥 '로 써도 된다)
+		}
+
+		if(endNavi != naviTotalCount) {
+			result.append("<li style='cursor: pointer;' onclick=\"location.href='/notice/notice.do?currentPage=" + (endNavi + 1) + "'\">></li>");
+		} else {
+			result.append("<li>></li>");
+		}
+
+		return result.toString();
 	}
 	
 	private Notice rsetToNotice(ResultSet rset) throws SQLException {

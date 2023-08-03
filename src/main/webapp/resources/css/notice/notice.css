@@ -96,6 +96,7 @@ main {
             font-size: 0.9em;
             padding: 10px;
             color: #a0a0a0;
+            cursor: pointer;
         }
 
         #page li:nth-child(2) {
@@ -105,8 +106,4 @@ main {
 
         #page li:not(li:first-child, li:last-child):hover {
             color: #EA5455;
-        }
-
-        #page li:not(li:first-child, li:last-child) {
-            cursor: pointer;
         }

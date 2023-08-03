@@ -19,12 +19,12 @@
                     <a href="/event/jmDescription.do"><li>종묘</li></a>
                 </ul>
             </li>
-            <li class="main-nav"><a href="/event/reservation.do?userID=${ user.userId }">행사 예매</a></li>
+            <li class="main-nav"><a href="/event/reservation.do?userId=${ sessionScope.userId }">행사 예매</a></li>
             <li class="main-nav"><a href="/hanbok/rental.do">한복 대여</a></li>
             <li class="main-nav"><a href="#">셔틀 버스</a></li>
             <li class="main-nav">열린 마당
                 <ul id="community-menu">
-                    <a href="/notice/notice.do"><li>공지사항</li></a>
+                    <a href="/notice/notice.do?currentPage=1"><li>공지사항</li></a>
                     <a href="#"><li>Q&A</li></a>
 <!--                                 <a href="#"><li>마이페이지</li></a> -->
                 </ul>

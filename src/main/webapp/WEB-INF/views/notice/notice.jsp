@@ -86,13 +86,14 @@
 
                     <!-- 페이지 전환 버튼  -->
                     <ul id="page">
-                        <li><</li>
-                        <li onclick="location.href='#'">1</li>
-                        <li onclick="location.href='#'">2</li>
-                        <li onclick="location.href='#'">3</li>
-                        <li onclick="location.href='#'">4</li>
-                        <li onclick="location.href='#'">5</li>
-                        <li>></li>
+<!--                         <li><</li> -->
+							${ pageNavi }
+<!--                         <li onclick="location.href='#'">1</li> -->
+<!--                         <li onclick="location.href='#'">2</li> -->
+<!--                         <li onclick="location.href='#'">3</li> -->
+<!--                         <li onclick="location.href='#'">4</li> -->
+<!--                         <li onclick="location.href='#'">5</li> -->
+<!--                         <li>></li> -->
                     </ul>
                 </section>
             </main>
