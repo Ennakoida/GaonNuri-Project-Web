@@ -41,7 +41,7 @@ public class ReserveController extends HttpServlet {
 		ReserveService service = new ReserveService();
 		String userId = request.getParameter("userId");
 		User user = service.selectOneById(userId);
-		
+//		System.out.println(userId);
 		request.setAttribute("user", user);
 		
 		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/event/reservation.jsp");

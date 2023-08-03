@@ -13,7 +13,7 @@
     <body>
         <div id="container">
 			<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
-			<input type="hidden" name="userId" value="${ user.userId }">
+<%-- 			<input type="hidden" name="userId" value="${ user.userId }"> --%>
             <main>
                 <section id="reservation-title">
                     <h1>행사 예매</h1>
@@ -168,10 +168,13 @@
             
             // 예매자 정보 동일 선택 시, 자동 입력
             document.getElementById("login-user").addEventListener("change", function(){
+            	const userName = '${ user.userName }';
+            	const userPhone = '${ user.userPhone }';
+            	const userEmail = '${ user.userEmail }';
                 if(document.getElementById("login-user").checked){
-                    document.getElementById("user-name").value = ${ user.userName };
-                    document.getElementById("user-phone").value = ${ user.userPhone };
-                    document.getElementById("user-email").value = ${ user.userEmail };
+                    document.getElementById("user-name").value = userName;
+                    document.getElementById("user-phone").value = userPhone;
+                    document.getElementById("user-email").value = userEmail;
                 } else {
                     document.getElementById("user-name").value = "";
                     document.getElementById("user-phone").value = "";
