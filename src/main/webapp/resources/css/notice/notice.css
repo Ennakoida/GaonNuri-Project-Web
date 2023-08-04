@@ -99,10 +99,10 @@ main {
             cursor: pointer;
         }
 
-        #page li:nth-child(2) {
-            color: #EA5455;
-            font-weight: bold;
-        }
+/*         #page li:nth-child(2) { */
+/*             color: #EA5455; */
+/*             font-weight: bold; */
+/*         } */
 
         #page li:not(li:first-child, li:last-child):hover {
             color: #EA5455;

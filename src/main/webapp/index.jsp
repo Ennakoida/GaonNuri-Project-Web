@@ -65,7 +65,7 @@
                             <p>종묘는 조선왕조 역대 왕과 왕후 및 추존된 왕과 왕후의 신주를 모신 사당으로서 가장 정제되고 장엄한 건축물 중의 하나입니다.</p>
                         </div>
                     </div>
-                    <button onclick="location.href='/event/reservation.do'">예매하기 ></button>
+                    <button onclick="location.href='/event/reservation.do?userId=${ sessionScope.userId }'">예매하기 ></button>
                 </section>
 
                 <!-- 다양한 지원 제공 -->
