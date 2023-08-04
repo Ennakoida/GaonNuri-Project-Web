@@ -54,7 +54,7 @@ public class UserService {
 	public int selectPwByIdPhone(User user) {
 		Connection conn = jdbcTemplate.createConnection();
 		
-		int resultCount = uDao.selectIdByPhone(conn, user);
+		int resultCount = uDao.selectPwByIdPhone(conn, user);
 		jdbcTemplate.close(conn);
 		return resultCount;
 	}

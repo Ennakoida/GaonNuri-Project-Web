@@ -91,7 +91,7 @@ public class UserDAO {
 		return uOne;
 	}
 
-	public int selectIdByPhone(Connection conn, User user) {
+	public int selectPwByIdPhone(Connection conn, User user) {
 		String query = "SELECT COUNT(*) FROM USER_TBL WHERE USER_ID = ? AND USER_PHONE = ?";
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
